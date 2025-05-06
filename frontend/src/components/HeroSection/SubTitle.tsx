@@ -4,7 +4,7 @@ const SubTitle = () => (
   <Typography
     variant="subtitle1"
     sx={{
-      fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+      fontSize: { xs: "2rem", sm: "1.25rem", md: "3rem" },
       color: "white",
       textAlign: "center",
       letterSpacing: 2,
