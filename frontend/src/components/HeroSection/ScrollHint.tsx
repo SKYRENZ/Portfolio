@@ -13,6 +13,8 @@ const ScrollHint = () => {
       sx={{
         position: "absolute",
         bottom: 20,
+        left: "50%",
+        transform: "translateX(-50%)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
