@@ -1,30 +1,17 @@
 import { Box } from "@mui/material";
-import NavButton from "./NavButton";
+import GooeyNav from "./GooeyNav";
 
 const NavBar = () => {
   const navItems = [
-    { label: "Home", target: "home" },
-    { label: "About", target: "about" },
-    { label: "Projects", target: "projects" },
-    { label: "Contact", target: "contact" },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
 
-  const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <Box sx={{ display: "flex", gap: 2, position: "fixed", top: 20, right: 20, zIndex: 1000 }}>
-      {navItems.map((item) => (
-        <NavButton
-          key={item.label}
-          label={item.label}
-          onClick={() => handleScroll(item.target)}
-        />
-      ))}
+    <Box sx={{ position: "fixed", top: 20, right: 20, zIndex: 1000 }}>
+      <GooeyNav items={navItems} />
     </Box>
   );
 };
