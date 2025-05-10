@@ -1,21 +1,34 @@
-import GooeyNav from './GooeyNav'
+import { Button } from "@mui/material";
 
-// update with your own items
-const items = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#" },
-];
+interface NavButtonProps {
+  label: string;
+  onClick?: () => void;
+}
 
-<div style={{ height: '600px', position: 'relative' }}>
-  <GooeyNav
-    items={items}
-    particleCount={15}
-    particleDistances={[90, 10]}
-    particleR={100}
-    initialActiveIndex={0}
-    animationTime={600}
-    timeVariance={300}
-    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-  />
-</div>
+const NavButton: React.FC<NavButtonProps> = ({ label, onClick }) => {
+  return (
+    <Button
+      variant="outlined"
+      sx={{
+        color: "primary.main",
+        borderColor: "primary.main",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          backgroundColor: "primary.main",
+          color: "white",
+          borderColor: "primary.dark",
+        },
+        "&:active": {
+          backgroundColor: "primary.dark",
+          color: "white",
+          borderColor: "primary.dark",
+        },
+      }}
+      onClick={onClick}
+    >
+      {label}
+    </Button>
+  );
+};
+
+export default NavButton;
