@@ -2,11 +2,29 @@ import { Box, Link, Typography } from "@mui/material";
 
 const NavBar = () => {
   const navItems = [
-    { label: "Intro", href: "#home" },
+    { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Works", href: "#projects" },
+    { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
+
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const navOffset = 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+
+    window.scrollTo({
+      top,
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
+  };
 
   return (
     <Box
@@ -38,6 +56,7 @@ const NavBar = () => {
           <Link
             key={item.label}
             href={item.href}
+            onClick={(event) => handleNavClick(event, item.href)}
             underline="none"
             sx={{
               color: "#f0dbc3",
