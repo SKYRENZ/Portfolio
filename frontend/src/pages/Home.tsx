@@ -4,10 +4,25 @@ import theme from "../theme/theme";
 import NavBar from "../components/Nav/NavBar";
 import { heroSectionStyles, aboutSectionStyles } from "../styles/boxStyles";
 import AboutContent from "../components/AboutSection/AboutContent";
+import WorksShowcase from "../components/WorkSection/WorksShowcase";
 import heroPhoto from "../assets/461747627_1181910642913802_398230516336479789_n.jpg";
 
 
 function App() {
+  const scrollToSection = (selector: string) => {
+    const target = document.querySelector(selector);
+    if (!target) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const navOffset = 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+
+    window.scrollTo({
+      top,
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
@@ -47,7 +62,7 @@ function App() {
                   width: { xs: "100%", md: "50%" },
                   minHeight: { xs: "58vh", md: "100vh" },
                   px: { xs: 3, sm: 6, md: 8 },
-                  py: { xs: 10, sm: 9, md: 14 },
+                  py: { xs: 8, sm: 7, md: 10 },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
@@ -68,7 +83,11 @@ function App() {
                   I&apos;m Mark Laurenz, a frontend developer based in the Philippines.
                 </Typography>
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mt: 1 }}>
-                  <Button variant="contained" sx={{ bgcolor: "primary.main", px: 4, py: 1.3, borderRadius: 0 }}>
+                  <Button
+                    variant="contained"
+                    sx={{ bgcolor: "primary.main", px: 4, py: 1.3, borderRadius: 0 }}
+                    onClick={() => scrollToSection("#about")}
+                  >
                     More About Me
                   </Button>
                   <Button variant="outlined" sx={{ borderColor: "primary.main", color: "primary.main", px: 4, py: 1.3, borderRadius: 0 }}>
@@ -105,6 +124,33 @@ function App() {
           }}
         >
           <AboutContent />
+        </Box>
+
+        <Box
+          component="section"
+          id="projects"
+          sx={{
+            minHeight: "100vh",
+            background: "radial-gradient(circle at 18% 20%, #2e1d12 0%, #130b07 52%, #090504 100%)",
+            color: "#f8efe4",
+            position: "relative",
+            overflow: "hidden",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              inset: "auto auto -18% -12%",
+              width: "40vw",
+              height: "40vw",
+              maxWidth: 440,
+              maxHeight: 440,
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(180,126,78,0.36) 0%, rgba(180,126,78,0) 74%)",
+              filter: "blur(15px)",
+              pointerEvents: "none",
+            },
+          }}
+        >
+          <WorksShowcase />
         </Box>
       </Box>
     </ThemeProvider>
