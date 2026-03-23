@@ -14,7 +14,7 @@ function App() {
       <Box
         sx={{
           scrollBehavior: "smooth",
-          scrollPaddingTop: "96px",
+          scrollPaddingTop: { xs: "88px", md: "96px" },
           "& > section": {
             scrollSnapAlign: "start",
             scrollSnapStop: "always",
@@ -45,9 +45,9 @@ function App() {
               <Box
                 sx={{
                   width: { xs: "100%", md: "50%" },
-                  minHeight: { xs: "60vh", md: "100vh" },
+                  minHeight: { xs: "58vh", md: "100vh" },
                   px: { xs: 3, sm: 6, md: 8 },
-                  py: { xs: 8, md: 14 },
+                  py: { xs: 10, sm: 9, md: 14 },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
@@ -59,7 +59,7 @@ function App() {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: "2.4rem", sm: "3rem", md: "4.2rem" },
+                    fontSize: { xs: "2.05rem", sm: "2.5rem", md: "4.2rem" },
                     lineHeight: 1.08,
                     fontWeight: 500,
                     maxWidth: 620,
