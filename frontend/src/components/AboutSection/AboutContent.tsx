@@ -4,7 +4,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import DownloadIcon from '@mui/icons-material/Download';
-import CircularImage from './CircularImage';
 
 const AboutContent: React.FC = () => {
   const handleDownloadResume = () => {
@@ -22,15 +21,6 @@ const AboutContent: React.FC = () => {
       alignItems: 'center',
       flexDirection: { xs: 'column', md: 'row' }
     }}>
-      {/* Left side - Image */}
-      <Box sx={{ 
-        flexShrink: 0,
-        display: 'flex',
-        justifyContent: 'center',
-        width: { xs: '100%', md: 'auto' }
-      }}>
-        <CircularImage alt="Mark Laurenz R. Listangco" size={300} />
-      </Box>
 
       {/* Right side - Content */}
       <Box sx={{ flex: 1 }}>

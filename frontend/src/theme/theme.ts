@@ -3,8 +3,16 @@ import typography from "./typography";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#1976d2" },
-    secondary: { main: "#ff4081" },
+    primary: { main: "#7a5230" },
+    secondary: { main: "#b98a5c" },
+    background: {
+      default: "#efe2d3",
+      paper: "#f8efe4",
+    },
+    text: {
+      primary: "#2d1b12",
+      secondary: "#6b4a33",
+    },
   },
   typography,
 });
