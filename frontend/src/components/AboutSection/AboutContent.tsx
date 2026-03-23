@@ -47,7 +47,7 @@ const AboutContent: React.FC = () => {
             <Button
               variant="contained"
               startIcon={<LinkedInIcon />}
-              href="https://linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/mark-laurenz-listangco-758329364"
               target="_blank"
               sx={{ bgcolor: '#7a5230', '&:hover': { bgcolor: '#8a5e37' }, borderRadius: 1.5, px: 1.6, py: .75, fontSize: '.86rem' }}
             >
@@ -56,7 +56,7 @@ const AboutContent: React.FC = () => {
             <Button
               variant="contained"
               startIcon={<GitHubIcon />}
-              href="https://github.com/your-username"
+              href="https://github.com/SKYRENZ"
               target="_blank"
               sx={{ bgcolor: '#7a5230', '&:hover': { bgcolor: '#8a5e37' }, borderRadius: 1.5, px: 1.6, py: .75, fontSize: '.86rem' }}
             >
@@ -65,7 +65,7 @@ const AboutContent: React.FC = () => {
             <Button
               variant="contained"
               startIcon={<EmailIcon />}
-              href="mailto:your.email@example.com"
+              href="mailto:listangco.marklaurenzbscs@gmail.com"
               sx={{ bgcolor: '#7a5230', '&:hover': { bgcolor: '#8a5e37' }, borderRadius: 1.5, px: 1.6, py: .75, fontSize: '.86rem' }}
             >
               Email
