@@ -4,9 +4,8 @@ import theme from "../theme/theme";
 import NavBar from "../components/Nav/NavBar";
 import { heroSectionStyles, aboutSectionStyles } from "../styles/boxStyles";
 import AboutContent from "../components/AboutSection/AboutContent";
+import heroPhoto from "../assets/461747627_1181910642913802_398230516336479789_n.jpg";
 
-
-const heroPhoto = "/src/assets/461747627_1181910642913802_398230516336479789_n.jpg";
 
 function App() {
   return (
