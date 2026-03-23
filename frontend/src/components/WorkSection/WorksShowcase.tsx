@@ -147,20 +147,6 @@ const projectsTemplate: ProjectTemplate[] = [
     ],
   },
   {
-    id: "huddlehub",
-    title: "HuddleHub",
-    category: "Collaboration",
-    summary: "Team workspace template",
-    about:
-      "Template collaboration app concept for teams. Includes channels, shared notes, and progress tracking blocks.",
-    tech: ["React", "Socket.IO", "MySQL"],
-    slides: [
-      { title: "Rooms", caption: "Channel layout and threads", accent: "#5b3421" },
-      { title: "Notes", caption: "Shared docs preview", accent: "#784a2c" },
-      { title: "Timeline", caption: "Milestone progress board", accent: "#98633d" },
-    ],
-  },
-  {
     id: "playforge",
     title: "PlayForge",
     category: "Game Dev",
@@ -290,7 +276,13 @@ const WorksShowcase = () => {
                 gridRow: { xs: "span 1", md: `span ${span.row}` },
                 borderRadius: 2,
                 p: { xs: 1.5, md: 2 },
-                bgcolor: "rgba(248, 239, 228, 0.08)",
+                bgcolor: project.cover ? "rgba(0,0,0,0.28)" : "rgba(248, 239, 228, 0.08)",
+                backgroundImage: project.cover
+                  ? `linear-gradient(rgba(10, 6, 4, 0.45), rgba(10, 6, 4, 0.45)), url(${project.cover})`
+                  : "none",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
                 border: "1px solid rgba(194, 148, 102, 0.35)",
                 cursor: "pointer",
                 display: "flex",
